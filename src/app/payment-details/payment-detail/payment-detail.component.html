@@ -13,6 +13,7 @@
         [(ngModel)]="service.formData.CardOwnerName"
         class="form-control"
         placeholder="Card Owner Name"
+        required
       />
     </div>
   </div>
@@ -29,7 +30,10 @@
         #CardNumber="ngModel"
         [(ngModel)]="service.formData.CardNumber"
         class="form-control"
-        placeholder="Card Number"
+        placeholder="16 Digit Card Number"
+        required
+        maxlength="16"
+        minlength="16"
       />
     </div>
   </div>
@@ -48,6 +52,9 @@
           [(ngModel)]="service.formData.ExpirationDate"
           class="form-control"
           placeholder="MM/YY"
+          required
+          maxlength="5"
+          minlength="5"
         />
       </div>
     </div>
@@ -65,6 +72,9 @@
           [(ngModel)]="service.formData.CVV"
           class="form-control"
           placeholder="CVV"
+          required
+          maxlength="3"
+          minlength="3"
         />
       </div>
     </div>
