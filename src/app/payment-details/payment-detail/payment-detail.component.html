@@ -86,7 +86,8 @@
     </div>
   </div>
   <div class="form-group">
-    <button class="btn btn-success btn-lg btn-block" type="submit">
+    <button class="btn btn-success btn-lg btn-block" type="submit"
+    [disabled]="form.invalid">
       <i class="fas fa-database"></i>Submit
     </button>
   </div>
