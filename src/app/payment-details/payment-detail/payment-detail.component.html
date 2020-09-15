@@ -3,7 +3,11 @@
     <div class="input-group">
       <div class="input-group-prepend">
         <div class="input-group-text bg-white">
-          <i class="fas fa-user-circle"></i>
+          <i
+            class="fas fa-user-circle"
+            [class.green-icon]="CardOwnerName.valid"
+            [class.red-icon]="CardOwnerName.invalid && CardOwnerName.touched"
+          ></i>
         </div>
       </div>
       <input
@@ -55,6 +59,8 @@
           required
           maxlength="5"
           minlength="5"
+          [class.green-icon]="ExpirationDate.valid"
+          [class.red-icon]="ExpirationDate.invalid && ExpirationDate.touched"
         />
       </div>
     </div>
@@ -75,6 +81,8 @@
           required
           maxlength="3"
           minlength="3"
+          [class.green-icon]="CVV.valid"
+          [class.red-icon]="CVV.invalid && CVV.touched"
         />
       </div>
     </div>
