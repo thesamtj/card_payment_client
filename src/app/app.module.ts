@@ -5,6 +5,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { PaymentDetailComponent } from './payment-details/payment-detail/payment-detail.component';
 import { PaymentDetailListComponent } from './payment-details/payment-detail-list/payment-detail-list.component';
+import { PaymentDetailService } from './shared/payment-detail.service';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,7 @@ import { PaymentDetailListComponent } from './payment-details/payment-detail-lis
     BrowserModule,
     AppRoutingModule
   ],
-  providers: [],
+  providers: [PaymentDetailService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
