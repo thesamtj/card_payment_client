@@ -46,7 +46,8 @@
       <div class="input-group">
         <div class="input-group-prepend">
           <div class="input-group-text bg-white">
-            <i class="fas fa-calendar-alt"></i>
+            <i class="fas fa-calendar-alt" [class.green-icon]="ExpirationDate.valid"
+            [class.red-icon]="ExpirationDate.invalid && ExpirationDate.touched"></i>
           </div>
         </div>
         <input
@@ -59,16 +60,15 @@
           required
           maxlength="5"
           minlength="5"
-          [class.green-icon]="ExpirationDate.valid"
-          [class.red-icon]="ExpirationDate.invalid && ExpirationDate.touched"
-        />
+                  />
       </div>
     </div>
     <div class="form-group col-md-5">
       <div class="input-group">
         <div class="input-group-prepend">
           <div class="input-group-text bg-white">
-            <i class="fas fa-key"></i>
+            <i class="fas fa-key" [class.green-icon]="CVV.valid"
+            [class.red-icon]="CVV.invalid && CVV.touched"></i>
           </div>
         </div>
         <input
@@ -81,8 +81,6 @@
           required
           maxlength="3"
           minlength="3"
-          [class.green-icon]="CVV.valid"
-          [class.red-icon]="CVV.invalid && CVV.touched"
         />
       </div>
     </div>
