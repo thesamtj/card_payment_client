@@ -17,12 +17,20 @@ export class PaymentDetailService {
   }
 
   putPaymentDetail() {
-    return this.http.put(this.rootURL + '/PaymentDetail/'+this.formData.PMId, this.formData);
+    return this.http.put(
+      this.rootURL + '/PaymentDetail/' + this.formData.PMId,
+      this.formData
+    );
+  }
+
+  deletePaymentDetail(id) {
+    return this.http.delete(this.rootURL + '/PaymentDetail/' + id);
   }
 
   refreshList() {
-    this.http.get(this.rootURL + '/PaymentDetail')
-    .toPromise()
-    .then(res => this.list = res as PaymentDetail[]);
+    this.http
+      .get(this.rootURL + '/PaymentDetail')
+      .toPromise()
+      .then((res) => (this.list = res as PaymentDetail[]));
   }
 }
