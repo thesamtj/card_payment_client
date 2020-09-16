@@ -43,4 +43,6 @@ export class PaymentDetailComponent implements OnInit {
       }
     );
   }
+
+  refreshList
 }
