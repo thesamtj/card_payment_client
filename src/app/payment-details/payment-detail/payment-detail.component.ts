@@ -14,20 +14,25 @@ export class PaymentDetailComponent implements OnInit {
     this.resetForm();
   }
 
-  resetForm(form?:NgForm) {
-    if (form != null) {
-      form.resetForm();
-      this.service.formData = {
-        PMId: 0,
-        CardOwnerName: '',
-        CardNumber: '',
-        ExpirationDate: '',
-        CVV: '',
-      };
-    }
+  resetForm(form?: NgForm) {
+    if (form != null) form.resetForm();
+    this.service.formData = {
+      PMId: 0,
+      CardOwnerName: '',
+      CardNumber: '',
+      ExpirationDate: '',
+      CVV: '',
+    };
   }
 
-  onSubmit(form:NgForm) {
-
+  onSubmit(form: NgForm) {
+    this.service.postPaymentDetail(form.value).subscribe(
+      (res) => {
+        this.resetForm(form);
+      },
+      (err) => {
+        console.log(err);
+      }
+    );
   }
 }
