@@ -54,7 +54,7 @@ export class PaymentDetailComponent implements OnInit {
     this.service.putPaymentDetail().subscribe(
       (res) => {
         this.resetForm(form);
-        this.toastr.success(
+        this.toastr.info(
           'Submitted successfully',
           'Payment Detail Register'
         );
