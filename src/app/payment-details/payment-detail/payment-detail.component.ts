@@ -42,6 +42,7 @@ export class PaymentDetailComponent implements OnInit {
           'Submitted successfully',
           'Payment Detail Register'
         );
+        this.service.refreshList();
       },
       (err) => {
         console.log(err);
@@ -50,13 +51,14 @@ export class PaymentDetailComponent implements OnInit {
   }
 
   updateRecord(form: NgForm) {
-    this.service.postPaymentDetail().subscribe(
+    this.service.putPaymentDetail().subscribe(
       (res) => {
         this.resetForm(form);
         this.toastr.success(
           'Submitted successfully',
           'Payment Detail Register'
         );
+        this.service.refreshList();
       },
       (err) => {
         console.log(err);
