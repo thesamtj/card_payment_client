@@ -1,7 +1,8 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
-import { FormsModule } from "@angular/forms";
+import { FormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { PaymentDetailComponent } from './payment-details/payment-detail/payment-detail.component';
@@ -12,14 +13,10 @@ import { PaymentDetailService } from './shared/payment-detail.service';
   declarations: [
     AppComponent,
     PaymentDetailComponent,
-    PaymentDetailListComponent
+    PaymentDetailListComponent,
   ],
-  imports: [
-    BrowserModule,
-    FormsModule,
-    AppRoutingModule
-  ],
+  imports: [BrowserModule, FormsModule, HttpClientModule, AppRoutingModule],
   providers: [PaymentDetailService],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

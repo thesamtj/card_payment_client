@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { PaymentDetail } from '../model/payment-detail';
+import { HttpClient } from '@angular/common/http';
 
 @Injectable({
   providedIn: 'root'
@@ -7,5 +8,7 @@ import { PaymentDetail } from '../model/payment-detail';
 export class PaymentDetailService {
   formData:PaymentDetail;
 
-  constructor() { }
+  constructor(private http:HttpClient) { }
+
+
 }

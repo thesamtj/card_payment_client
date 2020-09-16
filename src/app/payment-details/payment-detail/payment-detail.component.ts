@@ -14,7 +14,7 @@ export class PaymentDetailComponent implements OnInit {
     this.resetForm();
   }
 
-  resetForm(form?: NgForm) {
+  resetForm(form?:NgForm) {
     if (form != null) {
       form.resetForm();
       this.service.formData = {
@@ -25,5 +25,9 @@ export class PaymentDetailComponent implements OnInit {
         CVV: '',
       };
     }
+  }
+
+  onSubmit(form:NgForm) {
+
   }
 }
